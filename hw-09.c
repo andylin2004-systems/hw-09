@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 struct pokemon {
     char *name;
@@ -18,7 +19,8 @@ struct pokemon * allocPokemon(char *name, int hp){
 }
 
 int main(){
-    struct pokemon *p = allocPokemon("random", 1);
+    srand(time(NULL));
+    struct pokemon *p = allocPokemon("Pikachu", rand());
     printPokemon(p);
     return 0;
 }
