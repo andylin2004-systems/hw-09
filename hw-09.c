@@ -13,4 +13,13 @@ struct pokemon allocPokemon(char name, int hp){
     struct pokemon *p = malloc(sizeof(struct pokemon));
     p->name = name;
     p->hp = hp;
+    return *p;
+}
+
+int main(){
+    int i;
+    for (i = 0; i < 26; i++){
+        printPokemon(allocPokemon(i, i));
+    }
+    return 0;
 }
