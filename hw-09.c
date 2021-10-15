@@ -29,7 +29,7 @@ char * randomStringGen(char * string, int length){
 
 int main(){
     srand(time(NULL));
-    int length = rand() % 50 + 1;
+    int length = rand() % 50 + 2;
     char name[length];
     struct pokemon *p = allocPokemon(randomStringGen(name, length), rand());
     printPokemon(p);
