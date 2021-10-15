@@ -18,9 +18,20 @@ struct pokemon * allocPokemon(char *name, int hp){
     return p;
 }
 
+char * randomStringGen(char * string, int length){
+    int i;
+    for (i = 0; i < length - 1; i++){
+        string[i] = 'a' + rand() % 26;
+    }
+    string[length - 1] = '\0';
+    return string;
+}
+
 int main(){
     srand(time(NULL));
-    struct pokemon *p = allocPokemon("Pikachu", rand());
+    int length = rand() % 50 + 1;
+    char name[length];
+    struct pokemon *p = allocPokemon(randomStringGen(name, length), rand());
     printPokemon(p);
     return 0;
 }
